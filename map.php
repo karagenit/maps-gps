@@ -1,3 +1,17 @@
+<?php
+  $lat = 0;
+  $lng = 0;
+  if (($handle = fopen("data.log", "r")) !== FALSE) {
+    while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+      if (count($data) == 2) {
+        $lat = $data[0];
+        $lng = $data[1];
+      }
+    }
+    fclose($handle);
+  }
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -21,7 +35,7 @@
   <body>
     <div id="map"></div>
     <script>
-      var rocketLocation = {lat: 39.9452131, lng: -86.1492513};
+      var rocketLocation = {lat: <?=$lat?>, lng: <?=$lng?> };
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
           center: rocketLocation,

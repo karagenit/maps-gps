@@ -32,9 +32,9 @@
 #include <TinyGPS++.h>
 
 // Config (Use APN corresponding to your service providers configs)
-static String apn = "wholesale";
+static String apn = "yourAPN";
 static String loggingPassword = "";
-static String serverIP = "47.227.236.165:8087";
+static String serverIP = "your ip";
 
 // Pins where GPS and SIM modules are connected
 static const int SimRXPin = A3, SimTXPin = A2;
